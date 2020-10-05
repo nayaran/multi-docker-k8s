@@ -15,7 +15,7 @@ before_install:
   - gcloud config set project multi-docker-k8s-291511
   - gcloud config set compute/zone us-west1-a
   - gcloud container clusters get-credentials cluster-1
-  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t nayaran/react-test -f ./client/Dockerfile.dev ./client
   - docker push nayaran/react-test:latest
 
