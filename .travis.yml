@@ -20,8 +20,8 @@ before_install:
   - docker push nayaran/react-test:latest
 
 script:
+  - docker run -e CI=true nayaran/react-test npm test
   - echo tests pass
-  #- docker run -e CI=true nayaran/react-test npm test
 
 deploy:
   provider: script
